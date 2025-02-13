@@ -1,0 +1,9 @@
+title: Društvo Fršlus
+description: Društvo Fršlus je LGBTQ+ organizacija, ki deluje na območju Pomurja.
+
+theme: minima  # Specifies a Jekyll theme
+paginate: 5  # Number of posts per page if using pagination
+
+plugins:
+  - jekyll-feed  # Generates an RSS feed
+  - jekyll-seo-tag  # Adds SEO meta tags
