@@ -40,6 +40,7 @@
   .page-link {
     color: $text-color;
     line-height: $base-line-height;
+    font-family: 'Saint George';
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
@@ -93,7 +94,7 @@
       display: block;
       margin-left: 20px;
       padding: 5px 10px;
-
+      
       &:not(:last-child) {
         margin-right: 0;
       }
@@ -224,6 +225,7 @@
   @include relative-font-size(2.625);
   letter-spacing: -1px;
   line-height: 1;
+  font-family: 'Saint George';
 
   @include media-query($on-laptop) {
     @include relative-font-size(2.25);
