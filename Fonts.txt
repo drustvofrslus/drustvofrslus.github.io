@@ -1,0 +1,7 @@
+za naslove: Saint George
+za ostalo: Montserrat Classic
+
+Color: #FF914D
+Color 2: #0170B8
+Color 3: #FAF6EE
+Color 4: #FFDE59
