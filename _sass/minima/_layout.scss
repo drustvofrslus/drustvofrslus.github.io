@@ -3,13 +3,38 @@
  */
 .site-header {
   //border-top: 5px solid $grey-color-dark;
-  border-bottom: 1px solid $grey-color-light;
+  //border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
   padding: 0.5rem;
   background-color: #FFDE59;
   // Positioning context for the mobile navigation icon
   position: relative;
 }
+
+.bar {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.gradient {
+  background-image: linear-gradient(#FFDE59, #FF914D);
+  height: 300px;
+  width: 100%;
+}
+
+.site-title img {
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
 
 .site-title {
   @include relative-font-size(1.625);
@@ -43,16 +68,43 @@
     color: $text-color;
     line-height: $base-line-height;
     font-family: 'Saint George';
-
-    // Gaps between nav items, but not on the last one
+    position: relative;
+    text-decoration: none; // No underline by default
+    transition: color 0.3s ease, transform 0.3s ease;
+  
     &:not(:last-child) {
-      margin-right: 20px;
+      margin-right: 40px;
+    }
+  
+    &:hover, &.active { // No underline on hover or active
+      color: #0170B8;
+      transform: translateY(-3px);
+      text-decoration: none;
+    }
+  
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #FF914D;
+      left: 0;
+      bottom: -5px;
+      transition: width 0.3s ease;
+    }
+  
+    &:hover::after, &.active::after {
+      width: 100%;
     }
   }
+  
+  
+
+  
 
   @include media-query($on-palm) {
     position: absolute;
-    top: $spacing-unit * 0.5;
+    top: $spacing-unit * 0.8;
     right: $spacing-unit * 0.5;
     background-color: #FFDE59;
     border: 1px solid $grey-color-light;
@@ -213,8 +265,6 @@
   display: block;
   @include relative-font-size(1.5);
 }
-
-
 
 /**
  * Posts
