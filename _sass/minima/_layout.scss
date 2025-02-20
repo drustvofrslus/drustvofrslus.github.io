@@ -5,8 +5,8 @@
   //border-top: 5px solid $grey-color-dark;
   border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
-
-  background-image: linear-gradient(to right, #FFDE59, #FF914D);
+  padding: 0.5rem;
+  background-color: #FFDE59;
   // Positioning context for the mobile navigation icon
   position: relative;
 }
@@ -28,6 +28,8 @@
 .site-nav {
   float: right;
   line-height: $base-line-height * $base-font-size * 2.25;
+  font-size: 1.2em;
+  font-weight: 500;
 
   .nav-trigger {
       display: none;
@@ -52,7 +54,7 @@
     position: absolute;
     top: $spacing-unit * 0.5;
     right: $spacing-unit * 0.5;
-    background-image: linear-gradient(to right, #FFDE59, #FF914D);
+    background-color: #FFDE59;
     border: 1px solid $grey-color-light;
     border-radius: 5px;
     text-align: right;
@@ -110,7 +112,7 @@
 .site-footer {
   border-top: 1px solid $grey-color-light;
   padding-top: $spacing-unit * 0.5;
-  background-image: linear-gradient(to right, #FFDE59, #FF914D);
+  background-color: #FFDE59;
 }
 
 .footer-heading {
