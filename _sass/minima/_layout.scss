@@ -118,6 +118,11 @@
       height: 36px;
       z-index: 2;
       cursor: pointer;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: rotate(90deg);
+      }
     }
 
     .menu-icon {
@@ -131,29 +136,67 @@
 
       > svg {
         fill: black;
+        transition: fill 0.3s ease;
+      }
+
+      &:hover > svg {
+        fill: #0170B8;
       }
     }
 
     input ~ .trigger {
       clear: both;
       display: none;
+      transform-origin: top right;
     }
 
+    // Animate menu appearance from the icon
     input:checked ~ .trigger {
       display: block;
       padding-bottom: 5px;
+      animation: slideFromIcon 0.3s ease-out forwards;
     }
 
     .page-link {
       display: block;
       margin-left: 20px;
       padding: 5px 10px;
+      opacity: 0;
       
       &:not(:last-child) {
         margin-right: 0;
       }
+
+      // Animate each menu item with a delay
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          animation: fadeIn 0.3s ease-out forwards;
+          animation-delay: #{0.2 + $i * 0.1}s;
+        }
+      }
     }
+}
+
+// Define the animations
+@keyframes slideFromIcon {
+  from {
+    opacity: 0;
+    transform: scale(0);
   }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 }
 
 
