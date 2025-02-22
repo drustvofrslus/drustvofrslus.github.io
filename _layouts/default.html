@@ -20,6 +20,33 @@
 
     {%- include footer.html -%}
 
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const navTrigger = document.querySelector('input#nav-trigger');
+        const body = document.body;
+    
+        if (navTrigger) {
+          navTrigger.addEventListener('change', function () {
+            if (this.checked) {
+              body.classList.add('nav-open');
+            } else {
+              body.classList.remove('nav-open');
+            }
+          });
+    
+          document.addEventListener('click', function (e) {
+            const navMenu = document.querySelector('.site-nav');
+            const isClickInside = navMenu.contains(e.target) || navTrigger.contains(e.target);
+    
+            if (!isClickInside && body.classList.contains('nav-open')) {
+              navTrigger.checked = false;
+              body.classList.remove('nav-open');
+            }
+          });
+        }
+      });
+    </script>
+    
   </body>
 
 </html>
