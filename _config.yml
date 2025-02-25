@@ -6,6 +6,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 instagram_username: drustvo_frslus
 facebook_username:  "61552108473588"
+tiktok_username: drustvo_frslus
 
 # Build settings
 theme: minima
