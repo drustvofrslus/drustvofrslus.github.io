@@ -10,12 +10,16 @@ layout: default
   {{ content }}
 
   {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    <h2 class="post-list-heading">{{ page.list_title | default: "Novice" }}</h2>
     <ul class="post-list">
       {%- for post in site.posts -%}
       <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        {%- assign months = "januar|februar|marec|april|maj|junij|julij|avgust|september|oktober|november|december" | split: "|" -%}
+{%- assign month_index = post.date | date: "%-m" | minus: 1 -%}
+{%- assign month_name = months[month_index] -%}
+
+<span class="post-meta">{{ post.date | date: "%-d." }} {{ month_name }} {{ post.date | date: "%Y" }}</span>
+
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
@@ -28,7 +32,6 @@ layout: default
       {%- endfor -%}
     </ul>
 
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
   {%- endif -%}
 
 </div>
