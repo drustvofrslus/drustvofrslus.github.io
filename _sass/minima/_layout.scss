@@ -30,6 +30,10 @@
   &.show-gradient {
     height: 300px;
   }
+
+  &.hide-gradient {
+    height: 0;
+  }
   
   &.animating {
     /* Forces hardware acceleration for smoother transitions */
