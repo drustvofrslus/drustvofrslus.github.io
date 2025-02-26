@@ -56,6 +56,20 @@
   }
 }
 
+.post-image {
+  max-width: 100%;   // Ensures the image is responsive
+  height: auto;      // Maintains aspect ratio
+  width: 200px;      // Adjust this value to control the size of the image
+}
+
+.header-image {
+  max-width: 50%;
+  @include media-query($on-palm) {
+    max-width: 100%;
+  }
+}
+
+
 .gradient {
   background-image: linear-gradient(#FFDE59, #FF914D);
   height: 300px;
@@ -308,6 +322,11 @@
  */
 .post-header {
   margin-bottom: $spacing-unit;
+  width: 100%;
+  @include media-query($on-palm) {
+    width: 100%;
+    display: block;
+  }
 }
 
 .post-title {
@@ -315,7 +334,7 @@
   letter-spacing: -1px;
   line-height: 1;
   font-family: 'Saint George';
-
+  width: 10%;
   @include media-query($on-laptop) {
     @include relative-font-size(2.25);
   }
