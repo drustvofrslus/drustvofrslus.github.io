@@ -8,6 +8,13 @@ instagram_username: drustvo_frslus
 facebook_username:  "61552108473588"
 tiktok_username: drustvo_frslus
 
+header_pages:
+  - index.md
+  - novice.md
+  - about.md
+  - contact.md
+
+
 # Build settings
 theme: minima
 plugins:
