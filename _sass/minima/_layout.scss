@@ -90,7 +90,7 @@
   outline: 15px solid #FAF6EE;
   border-radius: 10px;
   @include media-query($on-palm) {
-    outline: 0px;
+    outline: 5px solid #FAF6EE;
     border-radius: 0px;
   }
 }
