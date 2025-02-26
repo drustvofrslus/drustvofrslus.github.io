@@ -21,50 +21,42 @@
 
 }
 
-// Gradient container animation
+/* Update gradient container CSS */
 .gradient-container {
   overflow: hidden;
-  height: 0; // default collapsed
+  height: 0;
   transition: height 0.5s ease-in-out;
 
   &.show-gradient {
-    height: 300px; // open state (the height of your gradient)
+    height: 300px;
   }
-
-  &.hide-gradient {
-    height: 0;
+  
+  &.animating {
+    /* Forces hardware acceleration for smoother transitions */
+    transform: translateZ(0);
+    will-change: height;
   }
 }
 
-// Page content fade
+/* Page content transitions */
 .page-content {
   opacity: 0;
   transition: opacity 0.5s ease;
-}
-
-.page-content.fade-in {
-  opacity: 1;
-}
-
-.page-content.fade-out {
-  opacity: 0;
-}
-
-
-.page-content {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out 0.5s; // Delay until gradient animation finishes
-
+  
   &.fade-in {
     opacity: 1;
   }
+  
+  &.fade-out {
+    opacity: 0;
+  }
 }
-
 
 .gradient {
   background-image: linear-gradient(#FFDE59, #FF914D);
   height: 300px;
   width: 100%;
+  transition: opacity 0.5s ease; /* Optional: fade-in/out gradient */
 }
 
 .site-title img {
@@ -276,7 +268,7 @@
   padding: $spacing-unit 0;
   flex: 1;
   // background-image: linear-gradient(to right, #FF914D, #FFDE59);
-  background-color: #FAF6EE;
+  background-color: $background-color;
 }
 
 .page-heading {
