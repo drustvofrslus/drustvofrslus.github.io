@@ -19,6 +19,21 @@ document.addEventListener('DOMContentLoaded', function() {
   let scrollAccumulator = 0;
   let initialLoad = true;
 
+  // Add to existing zipper.js
+document.addEventListener('click', function(e) {
+  const navTrigger = document.getElementById('nav-trigger');
+  const menuOverlay = document.querySelector('.menu-overlay');
+  
+  if (navTrigger.checked && !e.target.closest('.site-nav')) {
+    navTrigger.checked = false;
+  }
+});
+
+// Add touch support for closing
+document.querySelector('.menu-overlay').addEventListener('touchstart', function() {
+  document.getElementById('nav-trigger').checked = false;
+});
+
   // Update dimensions and scroll requirements
   function updateDimensions() {
     gradientHeight = gradient.offsetHeight;

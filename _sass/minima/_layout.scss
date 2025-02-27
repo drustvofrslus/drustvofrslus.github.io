@@ -237,10 +237,11 @@
 
   @include media-query($on-palm) {
     position: absolute;
-    top: $spacing-unit * 0.8;
+    top: $spacing-unit * 0.6;
     right: $spacing-unit * 0.5;
     background-color: #FFDE59;
-    border: 1px solid $grey-color-light;
+
+    z-index: 1004;
     border-radius: 5px;
     text-align: right;
 
@@ -250,6 +251,10 @@
       width: 36px;
       height: 36px;
       z-index: 2;
+      background: #FFDE59;
+      padding: 8px;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       cursor: pointer;
       transition: transform 0.3s ease;
 
@@ -280,12 +285,25 @@
     input ~ .trigger {
       clear: both;
       display: none;
+      border: 1px solid $grey-color-light;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      animation: fadeIn 0.5s ease-in;
     }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
 
     input:checked ~ .trigger {
       display: block;
       padding-bottom: 5px;
-      animation: slideDown 0.3s ease-out forwards;
     }
 
     .page-link {
