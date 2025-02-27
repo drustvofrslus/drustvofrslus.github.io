@@ -141,7 +141,7 @@ document.querySelector('.menu-overlay').addEventListener('touchstart', function(
     }
     
     if (initialLoad) {
-      setTimeout(() => initialLoad = false, 500);
+      setTimeout(() => initialLoad = false, 0);
       return;
     }
     
