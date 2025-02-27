@@ -105,7 +105,7 @@ document.querySelector('.menu-overlay').addEventListener('touchstart', function(
   // Wheel handler
   window.addEventListener('wheel', function(e) {
     if (initialLoad) {
-      setTimeout(() => initialLoad = false, 100);
+      setTimeout(() => initialLoad = false, 0);
       return;
     }
     
@@ -135,6 +135,11 @@ document.querySelector('.menu-overlay').addEventListener('touchstart', function(
   let touchPrevY = 0;
   
   window.addEventListener('touchstart', function(e) {
+    // Check if the touch is in the header area
+    if (e.target.closest('.site-header')) {
+      return; // Allow normal behavior for header touches
+    }
+    
     if (initialLoad) {
       setTimeout(() => initialLoad = false, 500);
       return;
@@ -144,8 +149,14 @@ document.querySelector('.menu-overlay').addEventListener('touchstart', function(
     touchPrevY = touchStartY;
     if (!zipperComplete) e.preventDefault();
   }, { passive: false });
+  
 
   window.addEventListener('touchmove', function(e) {
+    // Check if the touch is in the header area
+    if (e.target.closest('.site-header')) {
+      return; // Allow normal behavior for header touches
+    }
+  
     if (initialLoad) return;
     
     const touchY = e.touches[0].clientY;
