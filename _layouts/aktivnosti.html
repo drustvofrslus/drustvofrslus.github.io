@@ -7,11 +7,11 @@ layout: default
 
     {{ content }}
 
-    {%- assign novice_posts = site.posts | where: "category", "novice" -%}
+    {%- assign aktivnosti_posts = site.posts | where: "category", "aktivnosti" -%}
 
-    {%- if novice_posts.size > 0 -%}
+    {%- if aktivnosti_posts.size > 0 -%}
       <ul class="post-list">
-        {%- for post in novice_posts -%}
+        {%- for post in aktivnosti_posts -%}
         <li>
           {%- assign months = "januar|februar|marec|april|maj|junij|julij|avgust|september|oktober|november|december" | split: "|" -%}
           {%- assign month_index = post.date | date: "%-m" | minus: 1 -%}

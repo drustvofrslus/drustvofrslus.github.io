@@ -7,11 +7,11 @@ layout: default
 
     {{ content }}
 
-    {%- assign novice_posts = site.posts | where: "category", "novice" -%}
+    {%- assign lgbtinromi_posts = site.posts | where: "category", "lgbtinromi" -%}
 
-    {%- if novice_posts.size > 0 -%}
+    {%- if lgbtinromi_posts.size > 0 -%}
       <ul class="post-list">
-        {%- for post in novice_posts -%}
+        {%- for post in lgbtinromi_posts -%}
         <li>
           {%- assign months = "januar|februar|marec|april|maj|junij|julij|avgust|september|oktober|november|december" | split: "|" -%}
           {%- assign month_index = post.date | date: "%-m" | minus: 1 -%}
