@@ -3,7 +3,7 @@
  */
 .site-header {
   //border-top: 5px solid $grey-color-dark;
-  //border-bottom: 1px solid $grey-color-light;
+  border-bottom: 1px solid #FAF6EE;
   min-height: $spacing-unit * 1.865;
   padding: 0.5rem;
   z-index: 1005;
@@ -26,94 +26,11 @@
 
 .gradient {
   background-image: linear-gradient(#FFDE59, #FF914D);
-  height: 100vh; /* Full viewport height initially */
+  height: 50vh; /* Full viewport height initially */
   width: 100%;
   transition: height 0.5s ease;
   overflow: hidden;
   position: relative;
-}
-
-.zipper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-}
-
-.zipper-container {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 100%;
-  overflow: visible; /* Allow zipper to be visible below */
-}
-
-.zipper-track {
-  position: absolute;
-  width: 20px;
-  height: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #666;
-  z-index: 15;
-}
-
-.zipper-slider {
-  position: absolute;
-  width: 40px;
-  height: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 0;
-  z-index: 20;
-  background-color: #999;
-  border-radius: 0 0 20px 20px;
-  will-change: top; /* Performance hint for animations */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Add shadow for depth */
-}
-
-.zipper-pull {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: #666;
-  border: 4px solid #999;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.4); /* Add shadow for depth */
-}
-
-.zipper-left, .zipper-right {
-  position: absolute;
-  width: 40px;
-  top: 0;
-  height: 100%;
-  z-index: 12;
-}
-
-.zipper-left {
-  right: 50%;
-  background-color: rgba(255, 145, 77, 0.8);
-}
-
-.zipper-right {
-  left: 50%;
-  background-color: rgba(255, 222, 89, 0.8);
-}
-
-.zipper-opening {
-  position: absolute;
-  width: 100%;
-  height: 0;
-  top: 0; /* Changed from 60px to 0 to fix the top highlighting issue */
-  left: 0;
-  z-index: 5;
-  background-color: #FAF6EE;
-  will-change: height; /* Performance hint */
 }
 
 /* Page content transitions */
@@ -122,21 +39,10 @@
   transition: opacity 0.5s ease;
 }
 
-
-
 /* Specific styles for home page content */
 .home-content {
   position: relative;
   z-index: 5;
-}
-
-/* Container for completed state */
-.zipper-completed .gradient {
-  height: 90px; /* Height after completion */
-}
-
-.zipper-completed .page-content {
-  margin-top: 0;
 }
 
 .post-image {
@@ -146,7 +52,7 @@
 }
 
 .header-image {
-  max-width: 50%;
+  max-width: 40%;
   @include media-query($on-palm) {
     max-width: 100%;
   }
@@ -238,7 +144,7 @@
 
   @include media-query($on-palm) {
     position: absolute;
-    top: $spacing-unit * 0.6;
+    top: $spacing-unit * 0.7;
     right: $spacing-unit * 0.5;
     background-color: #FFDE59;
 

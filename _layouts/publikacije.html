@@ -7,11 +7,11 @@ layout: default
 
     {{ content }}
 
-    {%- assign novice_posts = site.posts | where: "category", "novice" -%}
+    {%- assign publikacije_posts = site.posts | where: "category", "publikacije" -%}
 
-    {%- if novice_posts.size > 0 -%}
+    {%- if publikacije_posts.size > 0 -%}
       <ul class="post-list">
-        {%- for post in novice_posts -%}
+        {%- for post in publikacije_posts -%}
         <li>
           {%- assign months = "januar|februar|marec|april|maj|junij|julij|avgust|september|oktober|november|december" | split: "|" -%}
           {%- assign month_index = post.date | date: "%-m" | minus: 1 -%}
@@ -36,6 +36,6 @@ layout: default
       </ul>
 
     {%- else -%}
-      <p>Ni objav :(</p>
+      <p>Ni publikacij :(</p>
     {%- endif -%}
 </div>
