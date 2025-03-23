@@ -69,7 +69,7 @@
 .page-content .wrapper {
   background-color: #FAF6EE;
   outline: 15px solid #FAF6EE;
-  border-radius: 10px;
+  border-radius: 1px;
   @include media-query($on-palm) {
     outline: 5px solid #FAF6EE;
     border-radius: 0px;
@@ -377,9 +377,12 @@
   letter-spacing: -1px;
   line-height: 1;
   font-family: 'Saint George';
-  width: 10%;
+  width: 20%;
   @include media-query($on-laptop) {
     @include relative-font-size(2.25);
+  }
+  @include media-query($on-palm) {
+    width: 70%;
   }
 }
 

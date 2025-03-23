@@ -2,7 +2,7 @@
 layout: post
 category: "novice"
 title:  "Projekt Karavan"
-permalink: /novice/projekt-karavan/
+permalink: /objava/projekt-karavan/
 image: "/assets/slike/projektkaravan.webp"
 ---
 
