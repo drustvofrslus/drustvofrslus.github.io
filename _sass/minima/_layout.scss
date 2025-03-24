@@ -3,7 +3,7 @@
  */
 .site-header {
   //border-top: 5px solid $grey-color-dark;
-  border-bottom: 1px solid #FAF6EE;
+  //border-bottom: 1px solid #FAF6EE;
   min-height: $spacing-unit * 1.865;
   padding: 0.5rem;
   z-index: 1005;
@@ -25,12 +25,13 @@
 /* Update these styles in your _layout.scss file */
 
 .gradient {
-  background-image: linear-gradient(#FFDE59, #FF914D);
+  background-image: url('/assets/slike/homepage.jpg');
   height: 50vh; /* Full viewport height initially */
   width: 100%;
-  transition: height 0.5s ease;
-  overflow: hidden;
-  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 40%;
+  background-position-x: 30%;
 }
 
 /* Page content transitions */
