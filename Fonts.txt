@@ -1,4 +1,4 @@
-za naslove: Saint George
+za naslove: Montserrat Classic
 za ostalo: Montserrat Classic
 
 Color: #FF914D
