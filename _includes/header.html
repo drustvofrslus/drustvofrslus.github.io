@@ -4,7 +4,7 @@
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     <a class="site-title page-link" rel="author" href="{{ "/" | relative_url }}">
-        <img src="{{ '/frsluslogo.png' | relative_url }}" style="height: 80px;">
+        <img src="{{ '/frsluslogo.png' | relative_url }}" alt="Društvo Fršlus" style="height: 80px;">
     </a>
 
     {%- if page_paths -%}

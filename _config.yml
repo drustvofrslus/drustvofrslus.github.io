@@ -3,7 +3,7 @@ email: drustvofrslus@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Društvo Fršlus je LGBTQ+ organizacija, ki deluje na območju Pomurja.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://frslus.si" # the base hostname & protocol for your site, e.g. http://example.com
 instagram_username: drustvo_frslus
 facebook_username:  "61552108473588"
 tiktok_username: drustvo_frslus
