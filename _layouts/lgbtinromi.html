@@ -7,7 +7,7 @@ layout: default
 
     {{ content }}
 
-    {%- assign lgbtinromi_posts = site.posts | where: "category", "lgbtinromi" -%}
+    {%- assign lgbtinromi_posts = site.posts | where: "categories", "lgbtinromi" -%}
 
     {%- if lgbtinromi_posts.size > 0 -%}
       <ul class="post-list">

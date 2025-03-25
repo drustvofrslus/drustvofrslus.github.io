@@ -18,7 +18,9 @@ layout: default
         </span>
       {%- endif -%}
     </p>
-    <img class="header-image" src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+    {%- if page.image -%}
+      <img class="header-image" src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+    {%- endif -%}
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">

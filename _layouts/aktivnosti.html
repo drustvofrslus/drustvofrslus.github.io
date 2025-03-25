@@ -7,7 +7,7 @@ layout: default
 
     {{ content }}
 
-    {%- assign aktivnosti_posts = site.posts | where: "category", "aktivnosti" -%}
+    {%- assign aktivnosti_posts = site.posts | where: "categories", "aktivnosti" -%}
 
     {%- if aktivnosti_posts.size > 0 -%}
       <ul class="post-list">

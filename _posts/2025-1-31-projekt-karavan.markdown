@@ -1,6 +1,6 @@
 ---
 layout: post
-category: "novice"
+categories: [novice]
 title:  "Projekt Karavan"
 permalink: /objava/projekt-karavan/
 image: "/assets/slike/projektkaravan.webp"

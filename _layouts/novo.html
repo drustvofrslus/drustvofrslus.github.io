@@ -1,0 +1,93 @@
+---
+layout: default
+---
+<div class="home">
+    <form id="contentForm" enctype="multipart/form-data">
+        <label for="naslov">Naslov:</label><br>
+        <input type="text" id="naslov"><br><br>
+
+        <label for="category">Kategorija (možno izbrati več):</label><br>
+        <input type="checkbox" name="category" value="novice" id="novice"> <label for="novice">Novice</label><br>
+        <input type="checkbox" name="category" value="aktivnosti" id="aktivnosti"> <label for="aktivnosti">Aktivnosti</label><br>
+        <input type="checkbox" name="category" value="lgbtinromi" id="lgbtinromi"> <label for="lgbtinromi">LGBT+ & Romi</label><br>
+        <input type="checkbox" name="category" value="publikacije" id="publikacije"> <label for="publikacije">Publikacije</label><br><br>
+
+        <label for="datum">Datum objave:</label><br>
+        <input type="date" id="datum">
+        <br><br>
+
+        <label for="vsebina">Vsebina:</label><br>
+        <textarea id="vsebina" cols="10" rows="10" style="width: 100%; height: 40vh;"></textarea><br><br>
+
+        <label for="fileUpload">Slika (Optional):</label><br>
+        <input type="file" id="fileUpload" name="fileUpload"><br><br>
+
+        <input type="submit" value="Generiraj">
+    </form>
+    <br><br>
+    <h2>Generirana vsebina (kopiraj in dodaj v GitHub repo)</h2>
+    <p><strong>Navodila:</strong> Kopirajte polje "Vsebina datoteke", nato pa <a href="https://github.com/drustvofrslus/drustvofrslus.github.io/new/main/_posts">kliknite tukaj</a> in prilepite vso kodo v vsebino (piše "Enter file contents here"). Nato kopirajte polje za "Ime datoteke" in prilepite zgoraj, kjer piše "Name your file..."</p>
+    <p><strong>Če je bil slika naložena:</strong> <a href="https://github.com/drustvofrslus/drustvofrslus.github.io/upload/main/assets/slike">Kliknite tukaj</a> in datoteko 'uploadajte' z gumbon "choose your files", nato pa lahko kliknete zelen gumb "Commit changes".</p>
+
+    Ime datoteke:
+    <textarea id="imedatoteke" readonly style="width: 100%;"></textarea>
+    Vsebina datoteke:
+    <textarea id="output" readonly style="width: 100%; height: 40vh;"></textarea>
+</div>
+
+<script>
+    document.getElementById("contentForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        let naslov = document.getElementById("naslov").value.trim();
+        let datum = document.getElementById("datum").value;
+        let vsebina = document.getElementById("vsebina").value.trim();
+        let fileUpload = document.getElementById("fileUpload").files[0];
+
+        // Ensure at least one category is selected
+        let categories = [];
+        document.querySelectorAll('input[name="category"]:checked').forEach((checkbox) => {
+            categories.push(checkbox.value);
+        });
+
+        if (!categories.length) {
+            alert("Prosimo, izberite vsaj eno kategorijo.");
+            return;
+        }
+
+        if (!naslov || !datum || !vsebina) {
+            alert("Prosimo, izpolnite vsa polja.");
+            return;
+        }
+
+        // Ensure the date format is correct (YYYY-MM-DD)
+        let formattedDate = datum;
+
+        // Generate filename (YYYY-MM-DD-title.markdown)
+        let filename = `${formattedDate}-${naslov.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '')}.markdown`;
+
+        // Generate permalink (formatted title in lowercase with dashes)
+        let permalinkTitle = naslov.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
+
+        let kategorijaStr = categories.length > 0 ? categories.join(", ") : "brez kategorije";
+
+        // Generate Jekyll Markdown content
+        let mdContent = `---
+title: "${naslov}"
+permalink: /objava/${permalinkTitle}/
+categories: [${kategorijaStr}]
+layout: post
+`;
+
+        // Add image line only if file is uploaded
+        if (fileUpload) {
+            mdContent += `image: "/assets/slike/${fileUpload.name}"\n`;
+        }
+
+        // Add content
+        mdContent += `---\n\n${vsebina}\n`;
+
+        document.getElementById("imedatoteke").value = `${filename}`;
+        document.getElementById("output").value = `${mdContent}`;
+    });
+</script>
