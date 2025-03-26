@@ -5,6 +5,6 @@ categories: [aktivnosti]
 layout: post
 ---
 
-Meseca maja pripravljamo dvodnevni festival romske in kvir kulture v Murski Soboti.
+Meseca aprila pripravljamo dvodnevni festival romske in kvir kulture v Murski Soboti.
 
 Več informacij kmalu ...
