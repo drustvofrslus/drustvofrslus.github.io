@@ -1,5 +1,5 @@
 ---
-title: "NAPOVEDUJEMO - RikkFest - Festival romske in kvir kulture"
+title: "NAPOVEDUJEMO (april) - RikkFest - Festival romske in kvir kulture"
 permalink: /objava/napovedujemo---rikkfest---festival-romske-in-kvir-kulture/
 categories: [aktivnosti]
 layout: post
