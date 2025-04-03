@@ -12,7 +12,7 @@ No, če se najdeš v zgornjem opisu, je ta delavnica oblikovana prav zate! Skozi
 
 Delavnico bomo izvedli v Dnevni sobi in informacijski točki za mlade kreativce na Zvezni ulici 6 v Murski Soboti ob 10. uri.
 
-Delavnico bo izvajal Sandi Horvat, urednik, novinar in voditelj radijskih in televizijskih oddaj na nacionalni RTV.
+Izvajal jo bo Sandi Horvat, urednik, novinar in voditelj radijskih in televizijskih oddaj na nacionalni RTV.
 
 V kolikor te delavnica zanima, se prijavi na drustvofrslus@gmail.com do 10. 4. 2025. Vsekakor bo na delavnici prisotna ekipa Fršlusa.
 
