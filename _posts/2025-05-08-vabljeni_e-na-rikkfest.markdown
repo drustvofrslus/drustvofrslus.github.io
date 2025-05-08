@@ -17,16 +17,27 @@ Na festivalu bodo postavljene stojnice, kjer se bo predstavilo 10 romskih in LGB
 Kdo se bo prestavil na RikkFestu?
 
 Društvo Parada ponosa; https://ljubljanapride.org/
+
 Društvo Legebitra; https://legebitra.si/
+
 Zavod Moja mavrica; https://mojamavrica.si/
+
 Društvo Dih; https://www.dih.si/
+
 DrogArt; https://www.drogart.org/
+
 Društvo Fršlus, frslus.si
+
 Radio Romic; https://www.radioromic.com/
+
 CŠOD - Večnamenski romski centri; https://www.facebook.com/profile.php?id=61551597715081
+
 Kulturno in športno društvo Kamenci Romano Pejtaušago; https://www.facebook.com/profile.php?id=100088607197409
+
 Romsko kulturno in turistično društvo Pušča; https://www.facebook.com/ktdpusca/
+
 Društvo kreativne mladine; https://creative-youths.com/
+
 Zagovornik načela enakosti; https://zagovornik.si/
 
 RikkFest podpirata RADENSKA in MLINOPEK.
