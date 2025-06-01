@@ -8,7 +8,7 @@ image: "/assets/slike/slika fršlus1.webp"
 
 Piše: Marcel
 
-Devetega in desetega maja je v središču Murske Sobote potek festival Rikkfest – Festival romske in kvir kulture. Dva dni smo na Trgu kulture poskrbeli_e za mreženje, sodelovanje, dialoge, vidnost in uspešno izvedbo prvega tovrstnega dogodka, ki piše zgodovino. Spoznali_e smo kulturno bogastvo romske in LGBT+ kulture in ustvarili_e prostor, kjer smo, vsaj za trenutek, bili eno. Brez predsodkov, brez diskriminacije, brez sovražnega govora.
+Devetega in desetega maja je v središču Murske Sobote potekal festival Rikkfest – Festival romske in kvir kulture. Dva dni smo na Trgu kulture poskrbeli_e za mreženje, sodelovanje, dialoge, vidnost in uspešno izvedbo prvega tovrstnega dogodka, ki piše zgodovino. Spoznali_e smo kulturno bogastvo romske in LGBT+ kulture in ustvarili_e prostor, kjer smo, vsaj za trenutek, bili eno. Brez predsodkov, brez diskriminacije, brez sovražnega govora.
 
 Skoraj mesec dni po dogodku smo strnili_e vtise naših prostovoljk_cev, ki so na stojnicah promovirali delo svojih društev. Vprašali_e smo jih, zakaj je izvedba tovrstnega dogodka pomembna v okolju, kjer se LGBT+ osebe soočamo z nevidnostjo in zakaj je pomembno povezovanje dveh marginaliziranih skupin. To so povedali_e:
 
