@@ -3,7 +3,7 @@ title: "Uspešno izveden Roma_kvir tabor"
 permalink: /objava/uspeno-izveden-roma_kvir-tabor/
 categories: [novice, lgbtinromi]
 layout: post
-image: "/assets/slike/Screenshot_20250922-124651.png"
+image: "/assets/slike/assets/slike/Screenshot_20250922-124651 (1).png"
 ---
 
 Napisal: Mag
