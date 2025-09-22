@@ -21,6 +21,39 @@
   margin-right: auto;
 }
 
+.show-all-btn {
+  color: $text-color;
+  line-height: $base-line-height;
+  font-family: 'Saint George';
+  font-size: 1.2em;
+  font-weight: 500;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+
+  &:hover, &.active {
+    color: #0170B8;
+    transform: translateY(-3px);
+    text-decoration: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #FF914D;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after, &.active::after {
+    width: 100%;
+  }
+}
+
 /* Update these styles in your _layout.scss file */
 
 .gradient {
