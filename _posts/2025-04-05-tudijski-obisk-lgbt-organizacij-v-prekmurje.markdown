@@ -3,7 +3,7 @@ title: "Študijski obisk LGBT+ organizacij v Prekmurje"
 permalink: /objava/tudijski-obisk-lgbt-organizacij-v-prekmurje/
 categories: [novice]
 layout: post
-image: "/assets/slike/slika fršlus zbriši5.webp"
+image: "/assets/slike/assets/slike/Screenshot_20250922-124651(1).png"
 ---
 
 Piše: Mag
