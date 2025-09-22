@@ -19,19 +19,23 @@
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 /* Update these styles in your _layout.scss file */
 
 .gradient {
   background-image: url('/assets/slike/homepage.webp');
-  height: 50vh; /* Full viewport height initially */
+  height: 80vh; /* Full viewport height initially */
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-y: 40%;
-  background-position-x: 30%;
+  background-position-y: 54%;
+  background-position-x: 100%;
+  @include media-query($on-palm) {
+    height: 29vh; /* Full viewport height initially */
+    width: 100%;
+    background-position-y: 100%;
+  }
 }
 
 /* Page content transitions */
