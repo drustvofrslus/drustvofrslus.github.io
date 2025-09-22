@@ -3,10 +3,10 @@ title: "Uspešno izveden Roma_kvir tabor"
 permalink: /objava/uspeno-izveden-roma_kvir-tabor/
 categories: [novice, lgbtinromi]
 layout: post
-image: "/assets/slike/assets/slike/Screenshot_20250922-124651 (1).png"
+image: "/assets/slike/Screenshot_20250922-124651 (1).png"
 ---
 
-Napisal: Mag
+Piše: Mag
 
 V zadnjem deževnem avgustovskem vikendu se je kolektiv Fršlusa zbral v prostorih Radia Romic, kjer smo pozdravili_e naše goste_je za dvodnevni Roma-kvir tabor. Predstavili_e smo se, se poheceli_e ter se vrgli_e naravnost v izobraževalno predstavitev o romski kulturi, ki jo je izpilila naša Mar. Naučili_e smo se kar nekaj o zgodovini in kuturi Romov, na koncu smo pa povadili_e tudi znanje romskega jezika s Kahoot kvizom.
 
