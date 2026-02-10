@@ -3,7 +3,7 @@ title: "Antifatness as a form of opression: Online workshop in English"
 permalink: /objava/antifatness-as-a-form-of-opression-online-workshop-in-english/
 categories: [aktivnosti]
 layout: post
-image: "/assets/slike/antifatness.png"
+image: "/assets/slike/WhatsApp Image 2026-02-10 at 22.36.48.jpeg"
 ---
 
 Spletna delavnica v angleščini // Online workshop in English
