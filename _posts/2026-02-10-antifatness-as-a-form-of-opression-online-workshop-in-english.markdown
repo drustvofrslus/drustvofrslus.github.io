@@ -1,5 +1,5 @@
 ---
-title: ""Antifatness as a form of opression": Online workshop in English"
+title: "Antifatness as a form of opression: Online workshop in English"
 permalink: /objava/antifatness-as-a-form-of-opression-online-workshop-in-english/
 categories: [aktivnosti]
 layout: post
