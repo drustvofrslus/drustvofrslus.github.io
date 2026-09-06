@@ -8,6 +8,8 @@ image: "/assets/slike/slika-marcel9.jpg"
 
 ## **Sprejeti, dokler ostajamo nevidni**
 
+*Piše: Marcel Baranja*
+
 Ko govorimo o položaju LGBT+ oseb v Prekmurju, se pogosto znajdemo pred nenavadnim paradoksom. Na prvi pogled se zdi, da je odnos okolja do LGBT+ tematike precej nevtralen. O njej se ne govori veliko, redko slišimo izrazito podporo, hkrati pa tudi odkrito sovražni odzivi niso nujno del vsakodnevnega javnega diskurza. Prav zaradi tega lahko nastane vtis, da posebnega problema pravzaprav ni. Toda odsotnost konflikta še ne pomeni nujno prisotnosti sprejetosti.
 
 Morda bi bilo natančneje reči, da se je v lokalnem okolju vzpostavila določena oblika tihega družbenega kompromisa. LGBT+ osebe lahko obstajajo, dokler njihova identiteta ostaja dovolj zasebna in neopazna. Istospolni par je lahko denimo povsem običajen par znotraj svojega stanovanja. Partnerja živita skupaj, se imata rada, skupaj načrtujeta življenje in si izkazujeta nežnost. Ko zapustita zasebni prostor, pa se lahko dinamika spremeni. V javnosti postaneta »prijatelja«. Držanje za roke, objem, poljub ob slovesu ali katera druga povsem vsakdanja oblika partnerske bližine postane
