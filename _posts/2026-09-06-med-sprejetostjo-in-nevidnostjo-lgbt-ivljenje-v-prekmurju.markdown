@@ -3,7 +3,7 @@ title: "Med sprejetostjo in nevidnostjo: LGBT+ življenje v Prekmurju"
 permalink: /objava/med-sprejetostjo-in-nevidnostjo-lgbt-ivljenje-v-prekmurju/
 categories: [novice]
 layout: post
-image: "/assets/slike/slika marcel9.jpg"
+image: "/assets/slike/slika-marcel9.jpg"
 ---
 
 ## **Sprejeti, dokler ostajamo nevidni**
