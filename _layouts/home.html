@@ -3,9 +3,6 @@ layout: default
 ---
 
 <style>
-  /* =========================
-     DOMAČA STRAN
-     ========================= */
 
   .fr-home {
     max-width: 1200px;
@@ -15,87 +12,100 @@ layout: default
 
 
   /* =========================
-     VELIKA NASLOVNA SLIKA
+     GLAVNA SLIKA
      ========================= */
 
   .fr-hero {
     position: relative;
+    width: 100%;
+    height: 500px;
     overflow: hidden;
     border-radius: 18px;
-    min-height: 480px;
-    background: #222;
     margin-bottom: 55px;
+    background: #222;
   }
 
-  .fr-hero-content {
+  /* Vsebina strani - fotografija */
+  .fr-hero-media {
     position: absolute;
     inset: 0;
+    z-index: 0;
+    overflow: hidden;
   }
 
-  .fr-hero-content p {
-    margin: 0;
-    height: 100%;
-  }
-
-  .fr-hero-content img {
+  .fr-hero-media p,
+  .fr-hero-media a,
+  .fr-hero-media figure {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    min-height: 480px;
-    object-fit: cover;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .fr-hero-media img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: cover !important;
+    margin: 0 !important;
+    padding: 0 !important;
     display: block;
   }
 
-  /* temnejši sloj čez sliko */
-  .fr-hero::after {
-    content: "";
+
+  /* TEMEN PREHOD ČEZ SLIKO */
+
+  .fr-hero-overlay {
     position: absolute;
     inset: 0;
-    background:
-      linear-gradient(
-        90deg,
-        rgba(0,0,0,0.65) 0%,
-        rgba(0,0,0,0.30) 55%,
-        rgba(0,0,0,0.05) 100%
-      );
     z-index: 1;
+    background: linear-gradient(
+      90deg,
+      rgba(0,0,0,0.67) 0%,
+      rgba(0,0,0,0.40) 42%,
+      rgba(0,0,0,0.10) 75%,
+      rgba(0,0,0,0.03) 100%
+    );
   }
+
+
+  /* BESEDILO NA SLIKI */
 
   .fr-hero-text {
     position: absolute;
     z-index: 2;
     left: 55px;
     bottom: 55px;
-    max-width: 620px;
+    max-width: 650px;
     color: white;
   }
 
   .fr-hero-title {
+    color: white !important;
     font-size: 52px;
     line-height: 1.05;
     margin: 0 0 18px 0;
-    color: white;
   }
 
   .fr-hero-subtitle {
+    color: white !important;
     font-size: 19px;
-    font-weight: 600;
+    font-weight: 700;
     margin: 0 0 25px 0;
-    color: white;
   }
 
   .fr-hero-button {
     display: inline-block;
     background: #ffd84d;
     color: #111 !important;
-    padding: 13px 24px;
+    padding: 14px 25px;
     border-radius: 30px;
     font-weight: bold;
     text-decoration: none !important;
-    transition: transform 0.2s ease;
-  }
-
-  .fr-hero-button:hover {
-    transform: translateY(-2px);
   }
 
 
@@ -130,9 +140,9 @@ layout: default
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
-    margin: 0;
-    padding: 0;
     list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   .fr-card {
@@ -144,11 +154,6 @@ layout: default
     display: flex;
     flex-direction: column;
     min-width: 0;
-  }
-
-  .fr-card-image-wrap {
-    display: block;
-    width: 100%;
   }
 
   .fr-card-image {
@@ -173,7 +178,7 @@ layout: default
     padding: 5px 11px;
     border-radius: 20px;
     font-size: 11px;
-    font-weight: 800;
+    font-weight: bold;
     margin-bottom: 10px;
   }
 
@@ -221,6 +226,7 @@ layout: default
     .fr-hero-title {
       font-size: 42px;
     }
+
   }
 
 
@@ -235,23 +241,18 @@ layout: default
     }
 
     .fr-hero {
-      min-height: 430px;
+      height: 440px;
       border-radius: 14px;
       margin-bottom: 38px;
     }
 
-    .fr-hero-content img {
-      min-height: 430px;
-    }
-
-    .fr-hero::after {
-      background:
-        linear-gradient(
-          0deg,
-          rgba(0,0,0,0.78) 0%,
-          rgba(0,0,0,0.25) 70%,
-          rgba(0,0,0,0.05) 100%
-        );
+    .fr-hero-overlay {
+      background: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.78) 0%,
+        rgba(0,0,0,0.38) 55%,
+        rgba(0,0,0,0.05) 100%
+      );
     }
 
     .fr-hero-text {
@@ -261,7 +262,7 @@ layout: default
     }
 
     .fr-hero-title {
-      font-size: 35px;
+      font-size: 36px;
       line-height: 1.05;
     }
 
@@ -269,16 +270,12 @@ layout: default
       font-size: 16px;
     }
 
-    .fr-news-header {
-      align-items: flex-end;
-    }
-
     .fr-news-heading {
       font-size: 32px;
     }
 
     .fr-all-news {
-      font-size: 14px;
+      font-size: 13px;
       text-align: right;
     }
 
@@ -294,6 +291,7 @@ layout: default
     .fr-card-title {
       font-size: 23px;
     }
+
   }
 
 </style>
@@ -302,15 +300,16 @@ layout: default
 <div class="fr-home">
 
 
-  <!-- =========================
-       VELIKA NASLOVNA SLIKA
-       ========================= -->
+  <!-- VELIKA FOTOGRAFIJA -->
 
   <section class="fr-hero">
 
-    <div class="fr-hero-content">
+    <div class="fr-hero-media">
       {{ content }}
     </div>
+
+    <div class="fr-hero-overlay"></div>
+
 
     <div class="fr-hero-text">
 
@@ -319,7 +318,7 @@ layout: default
       </h1>
 
       <p class="fr-hero-subtitle">
-        Mladi. Raznolikost. Skupnost. Prekmurje.
+        Mladi. Raznolikost. Skupnost. Pomurje.
       </p>
 
       <a
@@ -333,9 +332,8 @@ layout: default
   </section>
 
 
-  <!-- =========================
-       NAJNOVEJŠE OBJAVE
-       ========================= -->
+
+  <!-- NAJNOVEJŠE -->
 
   {% if site.posts.size > 0 %}
 
@@ -356,7 +354,9 @@ layout: default
 
     <ul class="fr-cards">
 
+
       {% for post in site.posts limit:3 %}
+
 
         {% assign months = "januar|februar|marec|april|maj|junij|julij|avgust|september|oktober|november|december" | split: "|" %}
 
@@ -368,13 +368,9 @@ layout: default
         <li class="fr-card">
 
 
-          <!-- SLIKA -->
-
           {% if post.image %}
 
-            <a
-              class="fr-card-image-wrap"
-              href="{{ post.url | relative_url }}">
+            <a href="{{ post.url | relative_url }}">
 
               <img
                 class="fr-card-image"
@@ -388,8 +384,6 @@ layout: default
 
           <div class="fr-card-body">
 
-
-            <!-- KATEGORIJA -->
 
             {% if post.categories contains "novice" %}
 
@@ -418,8 +412,6 @@ layout: default
             {% endif %}
 
 
-            <!-- DATUM -->
-
             <div class="fr-date">
 
               {{ post.date | date: "%-d." }}
@@ -429,20 +421,14 @@ layout: default
             </div>
 
 
-            <!-- NASLOV -->
-
             <h3 class="fr-card-title">
 
               <a href="{{ post.url | relative_url }}">
-
                 {{ post.title | escape }}
-
               </a>
 
             </h3>
 
-
-            <!-- KRATEK OPIS -->
 
             <div class="fr-excerpt">
 
@@ -450,8 +436,6 @@ layout: default
 
             </div>
 
-
-            <!-- PREBERI VEČ -->
 
             <a
               class="fr-read-more"
@@ -466,7 +450,9 @@ layout: default
 
         </li>
 
+
       {% endfor %}
+
 
     </ul>
 
