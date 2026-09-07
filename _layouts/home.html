@@ -131,7 +131,7 @@ layout: default
 
 
 /* ==================================================
-   NAJNOVEJŠE - NASLOV
+   NAJNOVEJŠE
    ================================================== */
 
 .fr-news-header {
@@ -162,7 +162,7 @@ layout: default
 
 
 /* ==================================================
-   KARTICE NOVIC
+   KARTICE
    ================================================== */
 
 .fr-cards {
@@ -317,11 +317,9 @@ layout: default
     min-height: 480px;
   }
 
-
   .fr-hero-title {
     font-size: 43px;
   }
-
 
   .fr-cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -436,9 +434,7 @@ layout: default
 <div class="fr-home">
 
 
-  <!-- ==================================================
-       UVODNA SLIKA
-       ================================================== -->
+  <!-- UVODNA SLIKA -->
 
   <section class="fr-hero">
 
@@ -454,7 +450,7 @@ layout: default
 
       <a
         class="fr-hero-button"
-        href="{{ '/about/' | relative_url }}">
+        href="{{ '/predstavitev/' | relative_url }}">
         Več o društvu →
       </a>
 
@@ -466,9 +462,7 @@ layout: default
   {{ content }}
 
 
-  <!-- ==================================================
-       NAJNOVEJŠE
-       ================================================== -->
+  <!-- NAJNOVEJŠE -->
 
   {% if site.posts.size > 0 %}
 
