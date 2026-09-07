@@ -4,7 +4,7 @@ title: O nas
 permalink: /predstavitev/
 ---
 
-Društvo Fršlus je bilo ustanovljeno z namenom povezovanja in opolnomočenja LGBTQIA+ (LGBT+) oseb v Pomurju ter ozaveščanja in informiranja o LGBT+ tematikah med LGBT+ skupnostjo in širšim prebivalstvom.  
+Društvo Fršlus je bilo ustanovljeno z namenom povezovanja in opolnomočenja LGBTQIA+ (LGBT+) oseb v Pomurju ter ozaveščanja in informiranja o LGBT+ in romskih tematikah med LGBT+, romsko skupnostjo in širšim prebivalstvom.  
 
 Delovanje društva temelji na zagotavljanju varnih prostorov, kjer se lahko LGBT+ osebe srečujejo, si izmenjujejo izkušnje in razpravljajo o svojih življenjskih težavah, vključno z izzivi, kot so razkritje spolne usmerjenosti ali identitete ter diskriminacija, s katero se pogosto soočajo.  
 
