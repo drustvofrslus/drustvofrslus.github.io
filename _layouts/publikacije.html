@@ -2,40 +2,181 @@
 layout: default
 ---
 
-<div class="home">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
+<style>
+  .publications-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
 
-    {{ content }}
+  .publications-page-title {
+    margin-bottom: 5px;
+  }
 
-    {%- assign publikacije_posts = site.posts | where: "categories", "publikacije" -%}
+  .publications-intro {
+    color: #777;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 35px;
+  }
 
-    {%- if publikacije_posts.size > 0 -%}
-      <ul class="post-list">
-        {%- for post in publikacije_posts -%}
-        <li>
-          {%- assign months = "januar|februar|marec|april|maj|junij|julij|avgust|september|oktober|november|december" | split: "|" -%}
-          {%- assign month_index = post.date | date: "%-m" | minus: 1 -%}
-          {%- assign month_name = months[month_index] -%}
+  .publications-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-          <span class="post-meta">{{ post.date | date: "%-d." }} {{ month_name }} {{ post.date | date: "%Y" }}</span>
+  .publications-card {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 28px;
+    margin-bottom: 45px;
+    align-items: start;
+  }
 
-          <h3>
-            <a class="post-link" href="{{ post.url | relative_url }}">
-              {{ post.title | escape }}
+  .publications-card-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+  }
+
+  .publications-category {
+    display: inline-block;
+    background: #ffd84d;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 7px;
+  }
+
+  .publications-date {
+    color: #777;
+    margin-bottom: 5px;
+  }
+
+  .publications-title {
+    font-size: 25px;
+    line-height: 1.05;
+    margin: 0 0 10px 0;
+  }
+
+  .publications-title a {
+    text-decoration: none;
+  }
+
+  .publications-excerpt {
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+
+  .publications-read-more {
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  @media (max-width: 650px) {
+    .publications-page {
+      padding: 15px;
+    }
+
+    .publications-card {
+      grid-template-columns: 110px minmax(0, 1fr);
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+
+    .publications-title {
+      font-size: 20px;
+      overflow-wrap: anywhere;
+    }
+
+    .publications-excerpt {
+      font-size: 14px;
+    }
+
+    .publications-date {
+      font-size: 14px;
+    }
+
+    .publications-card-image {
+      border-radius: 10px;
+    }
+  }
+</style>
+
+<div class="publications-page">
+
+  <h1 class="publications-page-title">{{ page.title | escape }}</h1>
+  <p class="publications-intro">Znanje, izkušnje in vsebine, ki jih delimo.</p>
+
+  {{ content }}
+
+  {%- assign publikacije_posts = site.posts | where: "categories", "publikacije" -%}
+
+  {%- if publikacije_posts.size > 0 -%}
+
+    <ul class="publications-list">
+
+      {%- for post in publikacije_posts -%}
+
+        {%- assign months = "januar|februar|marec|april|maj|junij|julij|avgust|september|oktober|november|december" | split: "|" -%}
+        {%- assign month_index = post.date | date: "%-m" | minus: 1 -%}
+        {%- assign month_name = months[month_index] -%}
+
+        <li class="publications-card">
+
+          <div>
+            {% if post.image %}
+              <a href="{{ post.url | relative_url }}">
+                <img
+                  class="publications-card-image"
+                  src="{{ post.image | relative_url }}"
+                  alt="{{ post.title | escape }}">
+              </a>
+            {% endif %}
+          </div>
+
+          <div>
+
+            <span class="publications-category">PUBLIKACIJE</span>
+
+            <div class="publications-date">
+              {{ post.date | date: "%-d." }}
+              {{ month_name }}
+              {{ post.date | date: "%Y" }}
+            </div>
+
+            <h2 class="publications-title">
+              <a href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            </h2>
+
+            <div class="publications-excerpt">
+              {{ post.excerpt | strip_html | truncate: 150 }}
+            </div>
+
+            <a class="publications-read-more"
+               href="{{ post.url | relative_url }}">
+              Preberi več →
             </a>
-          </h3>
-          {% if post.image %}
-            <img class="post-image" src="{{ post.image | relative_url }}" alt="{{ post.title }}">
-          {% endif %}
 
-          {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
-          {%- endif -%}
+          </div>
+
         </li>
-        {%- endfor -%}
-      </ul>
 
-    {%- else -%}
-      <p>Ni publikacij :(</p>
-    {%- endif -%}
+      {%- endfor -%}
+
+    </ul>
+
+  {%- else -%}
+
+    <p>Ni publikacij.</p>
+
+  {%- endif -%}
+
 </div>
