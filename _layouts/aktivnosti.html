@@ -2,40 +2,181 @@
 layout: default
 ---
 
-<div class="home">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
+<style>
+  .activities-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
 
-    {{ content }}
+  .activities-page-title {
+    margin-bottom: 5px;
+  }
 
-    {%- assign aktivnosti_posts = site.posts | where: "categories", "aktivnosti" -%}
+  .activities-intro {
+    color: #777;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 35px;
+  }
 
-    {%- if aktivnosti_posts.size > 0 -%}
-      <ul class="post-list">
-        {%- for post in aktivnosti_posts -%}
-        <li>
-          {%- assign months = "januar|februar|marec|april|maj|junij|julij|avgust|september|oktober|november|december" | split: "|" -%}
-          {%- assign month_index = post.date | date: "%-m" | minus: 1 -%}
-          {%- assign month_name = months[month_index] -%}
+  .activities-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-          <span class="post-meta">{{ post.date | date: "%-d." }} {{ month_name }} {{ post.date | date: "%Y" }}</span>
+  .activities-card {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 28px;
+    margin-bottom: 45px;
+    align-items: start;
+  }
 
-          <h3>
-            <a class="post-link" href="{{ post.url | relative_url }}">
-              {{ post.title | escape }}
+  .activities-card-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+  }
+
+  .activities-category {
+    display: inline-block;
+    background: #ffd84d;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 7px;
+  }
+
+  .activities-date {
+    color: #777;
+    margin-bottom: 5px;
+  }
+
+  .activities-title {
+    font-size: 25px;
+    line-height: 1.05;
+    margin: 0 0 10px 0;
+  }
+
+  .activities-title a {
+    text-decoration: none;
+  }
+
+  .activities-excerpt {
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+
+  .activities-read-more {
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  @media (max-width: 650px) {
+    .activities-page {
+      padding: 15px;
+    }
+
+    .activities-card {
+      grid-template-columns: 110px minmax(0, 1fr);
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+
+    .activities-title {
+      font-size: 20px;
+      overflow-wrap: anywhere;
+    }
+
+    .activities-excerpt {
+      font-size: 14px;
+    }
+
+    .activities-date {
+      font-size: 14px;
+    }
+
+    .activities-card-image {
+      border-radius: 10px;
+    }
+  }
+</style>
+
+<div class="activities-page">
+
+  <h1 class="activities-page-title">{{ page.title | escape }}</h1>
+  <p class="activities-intro">Dogodki, ki povezujejo.</p>
+
+  {{ content }}
+
+  {%- assign aktivnosti_posts = site.posts | where: "categories", "aktivnosti" -%}
+
+  {%- if aktivnosti_posts.size > 0 -%}
+
+    <ul class="activities-list">
+
+      {%- for post in aktivnosti_posts -%}
+
+        {%- assign months = "januar|februar|marec|april|maj|junij|julij|avgust|september|oktober|november|december" | split: "|" -%}
+        {%- assign month_index = post.date | date: "%-m" | minus: 1 -%}
+        {%- assign month_name = months[month_index] -%}
+
+        <li class="activities-card">
+
+          <div>
+            {% if post.image %}
+              <a href="{{ post.url | relative_url }}">
+                <img
+                  class="activities-card-image"
+                  src="{{ post.image | relative_url }}"
+                  alt="{{ post.title | escape }}">
+              </a>
+            {% endif %}
+          </div>
+
+          <div>
+
+            <span class="activities-category">AKTIVNOSTI</span>
+
+            <div class="activities-date">
+              {{ post.date | date: "%-d." }}
+              {{ month_name }}
+              {{ post.date | date: "%Y" }}
+            </div>
+
+            <h2 class="activities-title">
+              <a href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            </h2>
+
+            <div class="activities-excerpt">
+              {{ post.excerpt | strip_html | truncate: 150 }}
+            </div>
+
+            <a class="activities-read-more"
+               href="{{ post.url | relative_url }}">
+              Preberi več →
             </a>
-          </h3>
-          {% if post.image %}
-            <img class="post-image" src="{{ post.image | relative_url }}" alt="{{ post.title }}">
-          {% endif %}
 
-          {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
-          {%- endif -%}
+          </div>
+
         </li>
-        {%- endfor -%}
-      </ul>
 
-    {%- else -%}
-      <p>Ni objav :(</p>
-    {%- endif -%}
+      {%- endfor -%}
+
+    </ul>
+
+  {%- else -%}
+
+    <p>Ni objav.</p>
+
+  {%- endif -%}
+
 </div>
