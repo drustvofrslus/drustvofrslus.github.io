@@ -93,8 +93,9 @@ $on-laptop: 800px !default;
 
 /* Mobilni gumb za meni */
 
-.site-nav .menu-icon > svg {
-  fill: #111111;
+.site-nav label[for="nav-trigger"] {
+  background: transparent !important;
+
 }
 
 
