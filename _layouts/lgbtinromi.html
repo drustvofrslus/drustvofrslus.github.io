@@ -2,40 +2,181 @@
 layout: default
 ---
 
-<div class="home">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
+<style>
+  .lgbtromi-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
 
-    {{ content }}
+  .lgbtromi-page-title {
+    margin-bottom: 5px;
+  }
 
-    {%- assign lgbtinromi_posts = site.posts | where: "categories", "lgbtinromi" -%}
+  .lgbtromi-intro {
+    color: #777;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 35px;
+  }
 
-    {%- if lgbtinromi_posts.size > 0 -%}
-      <ul class="post-list">
-        {%- for post in lgbtinromi_posts -%}
-        <li>
-          {%- assign months = "januar|februar|marec|april|maj|junij|julij|avgust|september|oktober|november|december" | split: "|" -%}
-          {%- assign month_index = post.date | date: "%-m" | minus: 1 -%}
-          {%- assign month_name = months[month_index] -%}
+  .lgbtromi-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-          <span class="post-meta">{{ post.date | date: "%-d." }} {{ month_name }} {{ post.date | date: "%Y" }}</span>
+  .lgbtromi-card {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 28px;
+    margin-bottom: 45px;
+    align-items: start;
+  }
 
-          <h3>
-            <a class="post-link" href="{{ post.url | relative_url }}">
-              {{ post.title | escape }}
+  .lgbtromi-card-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+  }
+
+  .lgbtromi-category {
+    display: inline-block;
+    background: #ffd84d;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 7px;
+  }
+
+  .lgbtromi-date {
+    color: #777;
+    margin-bottom: 5px;
+  }
+
+  .lgbtromi-title {
+    font-size: 25px;
+    line-height: 1.05;
+    margin: 0 0 10px 0;
+  }
+
+  .lgbtromi-title a {
+    text-decoration: none;
+  }
+
+  .lgbtromi-excerpt {
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+
+  .lgbtromi-read-more {
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  @media (max-width: 650px) {
+    .lgbtromi-page {
+      padding: 15px;
+    }
+
+    .lgbtromi-card {
+      grid-template-columns: 110px minmax(0, 1fr);
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+
+    .lgbtromi-title {
+      font-size: 20px;
+      overflow-wrap: anywhere;
+    }
+
+    .lgbtromi-excerpt {
+      font-size: 14px;
+    }
+
+    .lgbtromi-date {
+      font-size: 14px;
+    }
+
+    .lgbtromi-card-image {
+      border-radius: 10px;
+    }
+  }
+</style>
+
+<div class="lgbtromi-page">
+
+  <h1 class="lgbtromi-page-title">{{ page.title | escape }}</h1>
+  <p class="lgbtromi-intro">Skupaj za enakost, vidnost in sprejemanje.</p>
+
+  {{ content }}
+
+  {%- assign lgbtinromi_posts = site.posts | where: "categories", "lgbtinromi" -%}
+
+  {%- if lgbtinromi_posts.size > 0 -%}
+
+    <ul class="lgbtromi-list">
+
+      {%- for post in lgbtinromi_posts -%}
+
+        {%- assign months = "januar|februar|marec|april|maj|junij|julij|avgust|september|oktober|november|december" | split: "|" -%}
+        {%- assign month_index = post.date | date: "%-m" | minus: 1 -%}
+        {%- assign month_name = months[month_index] -%}
+
+        <li class="lgbtromi-card">
+
+          <div>
+            {% if post.image %}
+              <a href="{{ post.url | relative_url }}">
+                <img
+                  class="lgbtromi-card-image"
+                  src="{{ post.image | relative_url }}"
+                  alt="{{ post.title | escape }}">
+              </a>
+            {% endif %}
+          </div>
+
+          <div>
+
+            <span class="lgbtromi-category">LGBT+ IN ROMI</span>
+
+            <div class="lgbtromi-date">
+              {{ post.date | date: "%-d." }}
+              {{ month_name }}
+              {{ post.date | date: "%Y" }}
+            </div>
+
+            <h2 class="lgbtromi-title">
+              <a href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            </h2>
+
+            <div class="lgbtromi-excerpt">
+              {{ post.excerpt | strip_html | truncate: 150 }}
+            </div>
+
+            <a class="lgbtromi-read-more"
+               href="{{ post.url | relative_url }}">
+              Preberi več →
             </a>
-          </h3>
-          {% if post.image %}
-            <img class="post-image" src="{{ post.image | relative_url }}" alt="{{ post.title }}">
-          {% endif %}
 
-          {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
-          {%- endif -%}
+          </div>
+
         </li>
-        {%- endfor -%}
-      </ul>
 
-    {%- else -%}
-      <p>Ni objav :(</p>
-    {%- endif -%}
+      {%- endfor -%}
+
+    </ul>
+
+  {%- else -%}
+
+    <p>Ni objav.</p>
+
+  {%- endif -%}
+
 </div>
