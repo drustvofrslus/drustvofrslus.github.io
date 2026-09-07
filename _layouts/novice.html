@@ -1,41 +1,174 @@
+
 ---
 layout: default
 ---
 
-<div class="home">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
+<style>
+  .news-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
 
-    {{ content }}
+  .news-page-title {
+    margin-bottom: 5px;
+  }
 
-    {%- assign novice_posts = site.posts | where: "categories", "novice" -%}
+  .news-intro {
+    color: #777;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 35px;
+  }
 
-    {%- if novice_posts.size > 0 -%}
-      <ul class="post-list">
-        {%- for post in novice_posts -%}
-        <li>
-          {%- assign months = "januar|februar|marec|april|maj|junij|julij|avgust|september|oktober|november|december" | split: "|" -%}
-          {%- assign month_index = post.date | date: "%-m" | minus: 1 -%}
-          {%- assign month_name = months[month_index] -%}
+  .news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-          <span class="post-meta">{{ post.date | date: "%-d." }} {{ month_name }} {{ post.date | date: "%Y" }}</span>
+  .news-card {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 28px;
+    margin-bottom: 45px;
+    align-items: start;
+  }
 
-          <h3>
-            <a class="post-link" href="{{ post.url | relative_url }}">
-              {{ post.title | escape }}
+  .news-card-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 18px;
+    display: block;
+  }
+
+  .news-category {
+    display: inline-block;
+    background: #FEDE59;
+    color: #333;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .news-date {
+    color: #888;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .news-title {
+    margin: 0 0 10px 0;
+    line-height: 1.15;
+  }
+
+  .news-title a {
+    color: #0170B8;
+    text-decoration: none;
+  }
+
+  .news-excerpt {
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .news-read-more {
+    color: #FF914D;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  @media (max-width: 700px) {
+    .news-page {
+      padding: 20px 25px;
+    }
+
+    .news-card {
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin-bottom: 50px;
+    }
+
+    .news-card-image {
+      aspect-ratio: 16 / 10;
+    }
+
+    .news-title {
+      font-size: 28px;
+    }
+  }
+</style>
+
+<div class="news-page">
+
+  <h1 class="news-page-title">{{ page.title | escape }}</h1>
+  <p class="news-intro">Zgodbe, ki povezujejo.</p>
+
+  {{ content }}
+
+  {%- assign novice_posts = site.posts | where: "categories", "novice" -%}
+
+  {%- if novice_posts.size > 0 -%}
+
+    <ul class="news-list">
+
+      {%- for post in novice_posts -%}
+
+        {%- assign months = "januar|februar|marec|april|maj|junij|julij|avgust|september|oktober|november|december" | split: "|" -%}
+        {%- assign month_index = post.date | date: "%-m" | minus: 1 -%}
+        {%- assign month_name = months[month_index] -%}
+
+        <li class="news-card">
+
+          <div>
+            {% if post.image %}
+              <a href="{{ post.url | relative_url }}">
+                <img
+                  class="news-card-image"
+                  src="{{ post.image | relative_url }}"
+                  alt="{{ post.title | escape }}">
+              </a>
+            {% endif %}
+          </div>
+
+          <div>
+            <span class="news-category">NOVICE</span>
+
+            <div class="news-date">
+              {{ post.date | date: "%-d." }}
+              {{ month_name }}
+              {{ post.date | date: "%Y" }}
+            </div>
+
+            <h2 class="news-title">
+              <a href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            </h2>
+
+            <div class="news-excerpt">
+              {{ post.excerpt | strip_html | truncate: 150 }}
+            </div>
+
+            <a class="news-read-more" href="{{ post.url | relative_url }}">
+              Preberi več →
             </a>
-          </h3>
-          {% if post.image %}
-            <img class="post-image" src="{{ post.image | relative_url }}" alt="{{ post.title }}">
-          {% endif %}
+          </div>
 
-          {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
-          {%- endif -%}
         </li>
-        {%- endfor -%}
-      </ul>
 
-    {%- else -%}
-      <p>Ni objav :(</p>
-    {%- endif -%}
+      {%- endfor -%}
+
+    </ul>
+
+  {%- else -%}
+
+    <p>Ni objav.</p>
+
+  {%- endif -%}
+
 </div>
