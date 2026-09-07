@@ -99,3 +99,12 @@ $on-laptop: 800px !default;
 .site-nav .menu-icon > svg {
   fill: #111111;
 }
+
+
+/* Odstrani rumeni kvadrat za okroglim gumbom na telefonu */
+
+@media screen and (max-width: 600px) {
+  .site-nav {
+    background-color: transparent !important;
+  }
+}
