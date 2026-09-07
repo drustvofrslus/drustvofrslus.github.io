@@ -454,7 +454,7 @@ layout: default
 
       <a
         class="fr-hero-button"
-        href="{{ '/o-nas/' | relative_url }}">
+        href="{{ '/about/' | relative_url }}">
         Več o društvu →
       </a>
 
@@ -463,7 +463,6 @@ layout: default
   </section>
 
 
-  <!-- Če je na domači strani dodatna vsebina -->
   {{ content }}
 
 
@@ -504,8 +503,6 @@ layout: default
         <li class="fr-card">
 
 
-          <!-- SLIKA -->
-
           {% if post.image %}
 
             <a
@@ -524,8 +521,6 @@ layout: default
 
           <div class="fr-card-body">
 
-
-            <!-- KATEGORIJA -->
 
             {% if post.categories contains "novice" %}
 
@@ -554,8 +549,6 @@ layout: default
             {% endif %}
 
 
-            <!-- DATUM -->
-
             <div class="fr-date">
 
               {{ post.date | date: "%-d." }}
@@ -564,8 +557,6 @@ layout: default
 
             </div>
 
-
-            <!-- NASLOV -->
 
             <h3 class="fr-card-title">
 
@@ -576,16 +567,12 @@ layout: default
             </h3>
 
 
-            <!-- OPIS -->
-
             <div class="fr-excerpt">
 
               {{ post.excerpt | strip_html | truncate: 115 }}
 
             </div>
 
-
-            <!-- PREBERI VEČ -->
 
             <a
               class="fr-read-more"
