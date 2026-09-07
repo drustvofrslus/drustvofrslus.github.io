@@ -4,295 +4,431 @@ layout: default
 
 <style>
 
-  .fr-home {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+/* ==================================================
+   SKRIJ STARO UVODNO SLIKO IZ DEFAULT LAYOUTA
+   ================================================== */
+
+.gradient {
+  display: none !important;
+}
 
 
-  /* =========================
-     GLAVNA SLIKA
-     ========================= */
+/* ==================================================
+   DOMAČA STRAN
+   ================================================== */
+
+.fr-home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 50px;
+}
+
+
+/* ==================================================
+   UVODNA SLIKA
+   ================================================== */
+
+.fr-hero {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.58) 0%,
+      rgba(0, 0, 0, 0.32) 42%,
+      rgba(0, 0, 0, 0.08) 75%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url('{{ "/assets/slike/slika fršlus1.webp" | relative_url }}');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 18px;
+  overflow: hidden;
+
+  margin-bottom: 55px;
+}
+
+
+/* ==================================================
+   BESEDILO NA UVODNI SLIKI
+   ================================================== */
+
+.fr-hero-text {
+  position: absolute;
+  left: 55px;
+  bottom: 50px;
+  right: 35px;
+
+  max-width: 650px;
+
+  color: white;
+
+  z-index: 2;
+}
+
+
+.fr-hero-title {
+  margin: 0 0 18px 0;
+
+  color: white !important;
+
+  font-size: 52px;
+  line-height: 1.05;
+
+  text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+}
+
+
+.fr-hero-subtitle {
+  margin: 0 0 26px 0;
+
+  color: white !important;
+
+  font-size: 19px;
+  line-height: 1.4;
+
+  font-weight: 700;
+
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+
+/* ==================================================
+   GUMB VEČ O DRUŠTVU
+   ================================================== */
+
+.fr-hero-button {
+  display: inline-block;
+
+  background: #ffd84d;
+
+  color: #111 !important;
+
+  padding: 14px 26px;
+
+  border-radius: 30px;
+
+  font-weight: 700;
+
+  text-decoration: none !important;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.fr-hero-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.18);
+}
+
+
+/* ==================================================
+   NAJNOVEJŠE - NASLOV
+   ================================================== */
+
+.fr-news-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 25px;
+}
+
+
+.fr-news-heading {
+  margin: 0;
+
+  font-size: 40px;
+  line-height: 1.1;
+}
+
+
+.fr-all-news {
+  font-weight: 700;
+
+  text-decoration: none !important;
+}
+
+
+/* ==================================================
+   KARTICE NOVIC
+   ================================================== */
+
+.fr-cards {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 25px;
+
+  list-style: none;
+
+  padding: 0;
+  margin: 0;
+}
+
+
+.fr-card {
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 0;
+
+  background: #fff;
+
+  border: 1px solid #eee;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+}
+
+
+.fr-card-image-link {
+  display: block;
+}
+
+
+.fr-card-image {
+  display: block;
+
+  width: 100%;
+  height: 220px;
+
+  object-fit: cover;
+}
+
+
+.fr-card-body {
+  display: flex;
+
+  flex-direction: column;
+
+  flex: 1;
+
+  padding: 20px;
+}
+
+
+/* ==================================================
+   KATEGORIJA
+   ================================================== */
+
+.fr-category {
+  display: inline-block;
+
+  align-self: flex-start;
+
+  background: #ffd84d;
+
+  color: #111;
+
+  padding: 5px 11px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  margin-bottom: 10px;
+}
+
+
+/* ==================================================
+   DATUM
+   ================================================== */
+
+.fr-date {
+  color: #777;
+
+  font-size: 14px;
+
+  margin-bottom: 8px;
+}
+
+
+/* ==================================================
+   NASLOV OBJAVE
+   ================================================== */
+
+.fr-card-title {
+  margin: 0 0 12px 0;
+
+  font-size: 24px;
+  line-height: 1.08;
+
+  overflow-wrap: anywhere;
+}
+
+
+.fr-card-title a {
+  text-decoration: none !important;
+}
+
+
+/* ==================================================
+   KRATEK OPIS
+   ================================================== */
+
+.fr-excerpt {
+  color: #666;
+
+  font-size: 15px;
+  line-height: 1.5;
+
+  margin-bottom: 18px;
+}
+
+
+/* ==================================================
+   PREBERI VEČ
+   ================================================== */
+
+.fr-read-more {
+  margin-top: auto;
+
+  font-weight: 700;
+
+  text-decoration: none !important;
+}
+
+
+/* ==================================================
+   TABLET
+   ================================================== */
+
+@media (max-width: 900px) {
 
   .fr-hero {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-    border-radius: 18px;
-    margin-bottom: 55px;
-    background: #222;
+    min-height: 480px;
   }
 
-  /* Vsebina strani - fotografija */
-  .fr-hero-media {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-  }
-
-  .fr-hero-media p,
-  .fr-hero-media a,
-  .fr-hero-media figure {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  .fr-hero-media img {
-    position: absolute !important;
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    max-width: none !important;
-    object-fit: cover !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    display: block;
-  }
-
-
-  /* TEMEN PREHOD ČEZ SLIKO */
-
-  .fr-hero-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: linear-gradient(
-      90deg,
-      rgba(0,0,0,0.67) 0%,
-      rgba(0,0,0,0.40) 42%,
-      rgba(0,0,0,0.10) 75%,
-      rgba(0,0,0,0.03) 100%
-    );
-  }
-
-
-  /* BESEDILO NA SLIKI */
-
-  .fr-hero-text {
-    position: absolute;
-    z-index: 2;
-    left: 55px;
-    bottom: 55px;
-    max-width: 650px;
-    color: white;
-  }
 
   .fr-hero-title {
-    color: white !important;
-    font-size: 52px;
-    line-height: 1.05;
-    margin: 0 0 18px 0;
+    font-size: 43px;
   }
 
-  .fr-hero-subtitle {
-    color: white !important;
-    font-size: 19px;
-    font-weight: 700;
-    margin: 0 0 25px 0;
-  }
-
-  .fr-hero-button {
-    display: inline-block;
-    background: #ffd84d;
-    color: #111 !important;
-    padding: 14px 25px;
-    border-radius: 30px;
-    font-weight: bold;
-    text-decoration: none !important;
-  }
-
-
-  /* =========================
-     NAJNOVEJŠE
-     ========================= */
-
-  .fr-news-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 25px;
-  }
-
-  .fr-news-heading {
-    font-size: 40px;
-    margin: 0;
-  }
-
-  .fr-all-news {
-    font-weight: bold;
-    text-decoration: none !important;
-  }
-
-
-  /* =========================
-     KARTICE
-     ========================= */
 
   .fr-cards {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 25px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .fr-card {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid #eee;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
+}
+
+
+/* ==================================================
+   TELEFON
+   ================================================== */
+
+@media (max-width: 650px) {
+
+  .fr-home {
+    padding: 12px 10px 40px;
   }
+
+
+  .fr-hero {
+    min-height: 470px;
+
+    border-radius: 12px;
+
+    margin-bottom: 38px;
+
+    background-image:
+      linear-gradient(
+        0deg,
+        rgba(0,0,0,0.72) 0%,
+        rgba(0,0,0,0.38) 42%,
+        rgba(0,0,0,0.06) 75%,
+        rgba(0,0,0,0) 100%
+      ),
+      url('{{ "/assets/slike/slika fršlus1.webp" | relative_url }}');
+
+    background-position: center center;
+  }
+
+
+  .fr-hero-text {
+    left: 24px;
+    right: 24px;
+    bottom: 28px;
+
+    max-width: none;
+  }
+
+
+  .fr-hero-title {
+    font-size: 36px;
+    line-height: 1.05;
+
+    margin-bottom: 14px;
+  }
+
+
+  .fr-hero-subtitle {
+    font-size: 16px;
+
+    margin-bottom: 22px;
+  }
+
+
+  .fr-hero-button {
+    padding: 12px 21px;
+
+    font-size: 15px;
+  }
+
+
+  .fr-news-header {
+    align-items: flex-end;
+
+    gap: 10px;
+  }
+
+
+  .fr-news-heading {
+    font-size: 31px;
+  }
+
+
+  .fr-all-news {
+    font-size: 13px;
+
+    text-align: right;
+  }
+
+
+  .fr-cards {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
 
   .fr-card-image {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
+    height: 230px;
   }
 
-  .fr-card-body {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-
-  .fr-category {
-    display: inline-block;
-    align-self: flex-start;
-    background: #ffd84d;
-    color: #111;
-    padding: 5px 11px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
-  .fr-date {
-    color: #777;
-    font-size: 14px;
-    margin-bottom: 8px;
-  }
 
   .fr-card-title {
-    font-size: 24px;
-    line-height: 1.08;
-    margin: 0 0 12px 0;
-    overflow-wrap: anywhere;
+    font-size: 23px;
   }
 
-  .fr-card-title a {
-    text-decoration: none !important;
-  }
-
-  .fr-excerpt {
-    color: #666;
-    font-size: 15px;
-    line-height: 1.5;
-    margin-bottom: 18px;
-  }
-
-  .fr-read-more {
-    margin-top: auto;
-    font-weight: bold;
-    text-decoration: none !important;
-  }
-
-
-  /* =========================
-     TABLET
-     ========================= */
-
-  @media (max-width: 900px) {
-
-    .fr-cards {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .fr-hero-title {
-      font-size: 42px;
-    }
-
-  }
-
-
-  /* =========================
-     TELEFON
-     ========================= */
-
-  @media (max-width: 650px) {
-
-    .fr-home {
-      padding: 12px;
-    }
-
-    .fr-hero {
-      height: 440px;
-      border-radius: 14px;
-      margin-bottom: 38px;
-    }
-
-    .fr-hero-overlay {
-      background: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.78) 0%,
-        rgba(0,0,0,0.38) 55%,
-        rgba(0,0,0,0.05) 100%
-      );
-    }
-
-    .fr-hero-text {
-      left: 25px;
-      right: 25px;
-      bottom: 30px;
-    }
-
-    .fr-hero-title {
-      font-size: 36px;
-      line-height: 1.05;
-    }
-
-    .fr-hero-subtitle {
-      font-size: 16px;
-    }
-
-    .fr-news-heading {
-      font-size: 32px;
-    }
-
-    .fr-all-news {
-      font-size: 13px;
-      text-align: right;
-    }
-
-    .fr-cards {
-      grid-template-columns: 1fr;
-      gap: 25px;
-    }
-
-    .fr-card-image {
-      height: 230px;
-    }
-
-    .fr-card-title {
-      font-size: 23px;
-    }
-
-  }
+}
 
 </style>
 
@@ -300,16 +436,11 @@ layout: default
 <div class="fr-home">
 
 
-  <!-- VELIKA FOTOGRAFIJA -->
+  <!-- ==================================================
+       UVODNA SLIKA
+       ================================================== -->
 
   <section class="fr-hero">
-
-    <div class="fr-hero-media">
-      {{ content }}
-    </div>
-
-    <div class="fr-hero-overlay"></div>
-
 
     <div class="fr-hero-text">
 
@@ -332,8 +463,13 @@ layout: default
   </section>
 
 
+  <!-- Če je na domači strani dodatna vsebina -->
+  {{ content }}
 
-  <!-- NAJNOVEJŠE -->
+
+  <!-- ==================================================
+       NAJNOVEJŠE
+       ================================================== -->
 
   {% if site.posts.size > 0 %}
 
@@ -368,9 +504,13 @@ layout: default
         <li class="fr-card">
 
 
+          <!-- SLIKA -->
+
           {% if post.image %}
 
-            <a href="{{ post.url | relative_url }}">
+            <a
+              class="fr-card-image-link"
+              href="{{ post.url | relative_url }}">
 
               <img
                 class="fr-card-image"
@@ -384,6 +524,8 @@ layout: default
 
           <div class="fr-card-body">
 
+
+            <!-- KATEGORIJA -->
 
             {% if post.categories contains "novice" %}
 
@@ -412,6 +554,8 @@ layout: default
             {% endif %}
 
 
+            <!-- DATUM -->
+
             <div class="fr-date">
 
               {{ post.date | date: "%-d." }}
@@ -420,6 +564,8 @@ layout: default
 
             </div>
 
+
+            <!-- NASLOV -->
 
             <h3 class="fr-card-title">
 
@@ -430,12 +576,16 @@ layout: default
             </h3>
 
 
+            <!-- OPIS -->
+
             <div class="fr-excerpt">
 
               {{ post.excerpt | strip_html | truncate: 115 }}
 
             </div>
 
+
+            <!-- PREBERI VEČ -->
 
             <a
               class="fr-read-more"
